@@ -1,0 +1,759 @@
+@startuml
+class GenresAndCountries {
+}
+class CountryFilter {
+}
+class GenreFilter {
+}
+class ProfileViewModelFactory {
+}
+class SearchViewModelFactory {
+}
+interface CollectionDao {
++ void insertFavoritesCollection()
++ void insertToWatchCollection()
++ void insertWatchedCollection()
++ void insertCollection(CollectionDB)
++ List<CollectionDB> getAllCollections()
++ CollectionDB getCollectionByName(String?)
++ void updateCollection(CollectionDB)
++ void addMovieToCollection(String,List<Int>)
+}
+class GetMovieListUseCase {
++ List<Movie> getPremiers(Int,String,Int)
++ List<Movie> getPopular(String,Int)
++ List<Movie> getMoviesByGenre(Array<Int>,Array<Int>,Int)
++ List<Movie> getSerials(String,Int)
++ Movie getMovieInfo(Int)
++ List<Person> getPersons(Int)
++ List<Image> getMovieImages(Int,String)
++ List<SimilarMovie> getSimilarMovies(Int)
++ PersonInfo getPersonInfo(Int)
++ List<Movie> getMoviesByParameters(void,Array<Int?>,void,Array<Int?>,void,String,void,String,void,Int,void,Int,void,Int,void,Int,void)
++ List<Movie> getMoviesByKeyword(String)
++ List<CountryFilter> getCountries()
++ List<GenreFilter> getGenres()
+}
+class ImagesListPage {
+- FragmentImagesListPageBinding? _binding
+-  binding
++ HomeViewModelFactory homeViewModelFactory
+- HomeViewModel viewModel
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class MovieDB {
+}
+class FilmsView {
+-  binding
++ RecyclerView getRecycler()
++ AppCompatButton getButton()
++ AppCompatButton getShowAllButton()
+}
+class Converter {
++ String fromIntegerList(List<Int?>)
++ List<Int> toIntegerList(String)
++ List<String> fromString(String)
++ String fromList(List<String>)
+}
+class HomeViewModelFactory {
+}
+class SimilarMovieAdapter {
+}
+interface OnItemClickListener {
++ void onItemClick(Int)
+}
+class SimilarMovieViewHolder {
+}
+class DiffUtilCallback {
++ Boolean areItemsTheSame(SimilarMovie,SimilarMovie)
++ Boolean areContentsTheSame(SimilarMovie,SimilarMovie)
+}
+class App {
+- AppDatabase db
++ void onCreate()
+}
+class GenresAdapter {
+}
+interface OnItemClickListener {
++ void onItemClick(GenreFilter)
+}
+class FiltersViewHolder {
+}
+class DiffUtilCallback {
++ Boolean areItemsTheSame(GenreFilter,GenreFilter)
++ Boolean areContentsTheSame(GenreFilter,GenreFilter)
+}
+interface CollectionsAdapter$OnItemClickListener {
++ void onItemClick(String)
+}
+class CollectionsAdapter$MovieViewHolder {
+}
+class CollectionsAdapter$DiffUtilCallback {
++ Boolean areItemsTheSame(CollectionDB,CollectionDB)
++ Boolean areContentsTheSame(CollectionDB,CollectionDB)
+}
+class CollectionsAdapter {
+- OnItemClickListener? onItemClickListener
++ MovieViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(MovieViewHolder,Int)
++ void setOnItemClickListener(OnItemClickListener)
+}
+class SearchYearPicker$Companion {
++ void newInstance()
+}
+class SearchYearPicker {
+- Int? selectedYearFrom
+- Int? selectedYearUntil
+- FragmentSearchYearPickerBinding? _binding
+-  binding
+-  yearList
+-  visibleYearRange
+-  adapter1
+-  adapter2
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+- void updateYearRange(YearPickerAdapter)
+- void updateVisibleYearRange(Boolean,YearPickerAdapter)
+- List<YearItem> generateYearList()
+}
+class MovieListApi$Companion {
+-  api_key
+-  api_key3
+-  api_key2
+-  api_key4
+-  api_key5
+-  temp2
+}
+interface MovieListApi {
++ void getMoviesPremiers(void)
++ void getMoviesTop(void)
++ void getMoviesByGenre(void)
++ void getSerials(void)
++ void getMovieInfo(void)
++ void getPersons(void)
++ void getMovieGallery(void)
++ void getSimilarMovies(void)
++ void getPersonInfo(void)
++ void getMoviesByParameters(void)
++ void getMoviesByKeyword(void)
++ GenresAndCountries getFilters(void)
+}
+class null {
+}
+interface MovieDao {
++ void insertMovieToDb(MovieDB)
++ List<MovieDB> getAllMovies()
+}
+interface ImagesAdapter$OnItemClickListener {
++ void onItemClick(Int)
+}
+class ImagesAdapter$ImagesViewHolder {
+}
+class ImagesAdapter$DiffUtilCallback {
++ Boolean areItemsTheSame(Image,Image)
++ Boolean areContentsTheSame(Image,Image)
+}
+class ImagesAdapter {
+- OnItemClickListener? onItemClickListener
++ ImagesViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(ImagesViewHolder,Int)
++ void setOnItemClickListener(OnItemClickListener)
+}
+class MovieListRepository {
++ List<Movie> getPremiers(Int,String,Int)
++ List<Movie> getPopular(String,Int)
++ List<Movie> getMoviesByGenre(Array<Int>,Array<Int>,Int)
++ List<Movie> getSerials(String,Int)
++ Movie getMovieInfo(Int)
++ List<Person> getPersons(Int)
++ List<Image> getMovieImages(Int,String)
++ List<SimilarMovie> getSimilarMovies(Int)
++ PersonInfo getPersonInfo(Int)
++ List<Movie> getMoviesByParameters(void,Array<Int?>,void,Array<Int?>,void,String,void,String,void,Int,void,Int,void,Int,void,Int,void)
++ List<Movie> getMoviesByKeyword(String)
++ List<CountryFilter> getCountries()
++ List<GenreFilter> getGenres()
+}
+class SearchViewModel {
+-  _loading
++  loading
+-  _error
++  error
+-  _moviesByKeywords
++  moviesByKeywords
+-  _moviesByParameters
++  moviesByParameters
++ void getMoviesByParameters(Array<Int?>,Array<Int?>,String,String,Int,Int,Int,Int)
++ void getMoviesByKeyword(String)
++ List<CountryFilter> loadCountries()
++ List<GenreFilter> loadGenres()
+}
+class PersonPageFragment {
+- FragmentPersonPageBinding? _binding
+-  binding
++ HomeViewModelFactory homeViewModelFactory
+- HomeViewModel viewModel
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+}
+class WelcomeActivity {
++ ProfileViewModelFactory profileViewModelFactory
+- ProfileViewModel profileViewModel
+-  activities
+- ActivityWelcomeBinding binding
+-  titleList
+-  imageList
++ void onCreate(Bundle?)
++ void onPause()
+- void addToList(String,Int)
+- void postToList()
+}
+class MovieTop {
+}
+class CountryTop {
+}
+class GenreTop {
+}
+class ImagesTop {
+}
+class ImageTop {
+}
+class SimilarMoviesTop {
+}
+class SimilarMovieTop {
+}
+class YearItem {
+}
+class HomeActivity {
+- ActivityHomeBinding binding
++ void onCreate(Bundle?)
+}
+class MoviePopularPagingSource {
+}
+class SettingsSearchFragment$Companion {
++ void newInstance(String,String)
+}
+class SettingsSearchFragment {
+- FragmentSettingsSearchBinding? _binding
+-  binding
++ SearchViewModelFactory searchViewModelFactory
+- SearchViewModel viewModel
+- SharedPreferences preferences
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+- void saveToSharedPreferences(String,Any)
+- Any retrieveFromSharedPreferences(String,Any)
+}
+class MovieTop250PagingSource {
+}
+class MovieList {
+}
+class CollectionNameDialog$Companion {
++ void newInstance()
+}
+class CollectionNameDialog {
+- FragmentCollectionNameDialogBinding? _binding
+-  binding
++ ProfileViewModelFactory profileViewModelFactory
+- ProfileViewModel viewModel
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+- void showDialog(Bundle)
+- void showErrorDialog()
+}
+class MoviePagingSerialsSource {
+}
+class AppModule {
++ AppDatabase provideAppDatabase(Context)
++ MovieDao provideMovieDao(AppDatabase)
++ CollectionDao provideCollectionDao(AppDatabase)
+}
+class CountriesAdapter {
+}
+interface OnItemClickListener {
++ void onItemClick(CountryFilter)
+}
+class FiltersViewHolder {
+}
+class DiffUtilCallback {
++ Boolean areItemsTheSame(CountryFilter,CountryFilter)
++ Boolean areContentsTheSame(CountryFilter,CountryFilter)
+}
+class CollectionDB {
+}
+class LoaderFragment$Companion {
++ void newInstance()
+}
+class LoaderFragment {
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+}
+class CollectionsDialogAdapter {
+}
+interface OnItemClickListener {
++ void onItemClick(String)
+}
+class MovieViewHolder {
+}
+class DiffUtilCallback {
++ Boolean areItemsTheSame(CollectionDB,CollectionDB)
++ Boolean areContentsTheSame(CollectionDB,CollectionDB)
+}
+class HomeViewModel {
+-  _moviesPremiers
++  moviesPremiers
+-  _moviesPopular
++  moviesPopular
+-  _moviesActionUSA
++  moviesActionUSA
+-  _moviesTop250
++  moviesTop250
+-  _moviesFranceDrams
++  moviesFranceDrams
+-  _serials
++  serials
+-  _personsInfo
++  personsInfo
+-  _similarMovies
++  similarMovies
++ Flow<PagingData<Movie>> pagedMoviesPremiers
++ Flow<PagingData<Movie>> pagedMoviesPopular
++ Flow<PagingData<Movie>> pagedByGenreMovies
++ Flow<PagingData<Movie>> pagedMoviesTop250
++ Flow<PagingData<Movie>> pagedSerials
++ Movie loadMovieInfo(Int)
++ void loadPersons(Int)
++ List<Image> loadMovieImg(Int,String)
++ void loadSimilarMovies(Int)
++ PersonInfo loadPersonInfo(Int)
+}
+class FragmentMoviePage$Companion {
++ void newInstance()
+}
+class FragmentMoviePage {
+- FragmentMoviePageBinding? _binding
+-  binding
++ HomeViewModelFactory homeViewModelFactory
+- HomeViewModel viewModel
++ ProfileViewModelFactory profileViewModelFactory
+- ProfileViewModel profileViewModel
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+- String formatMinutesToHoursAndMinutes(Int)
+- void onClickButton(Button,String,String,Int)
+- void showDialog(Bundle)
+}
+class HomeFragment$Companion {
++ void newInstance()
+}
+class HomeFragment {
+- FragmentHomeBinding? _binding
+-  binding
++ HomeViewModelFactory homeViewModelFactory
+- HomeViewModel viewModel
++  movieAdapterPremiers
++  movieAdapterPopular
++  movieAdapterActionUSA
++  movieAdapterTop250
++  movieAdapterFranceDrams
++  serialsAdapter
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+- void onClickButton(Button,TextView,String)
++ void showButton()
+}
+class Movie {
+}
+class Country {
+}
+class Genre {
+}
+class Images {
+}
+class Image {
+}
+class SimilarMovies {
+}
+class SimilarMovie {
+}
+interface PersonAdapter$OnItemClickListener {
++ void onItemClick(Int)
+}
+class PersonAdapter$PersonViewHolder {
+}
+class PersonAdapter$DiffUtilCallback {
++ Boolean areItemsTheSame(Person,Person)
++ Boolean areContentsTheSame(Person,Person)
+}
+class PersonAdapter {
+- OnItemClickListener? onItemClickListener
++ PersonViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(PersonViewHolder,Int)
++ void setOnItemClickListener(OnItemClickListener)
+}
+class CollectionNameDialogProfile$Companion {
++ void newInstance()
+}
+class CollectionNameDialogProfile {
+- FragmentCollectionNameDialogBinding? _binding
+-  binding
++ ProfileViewModelFactory profileViewModelFactory
+- ProfileViewModel viewModel
++  profileFragment
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+- void showErrorDialog()
+}
+class MainViewModel {
+}
+class Person {
+}
+interface MovieAdapter$OnItemClickListener {
++ void onItemClick(Int)
+}
+class MovieAdapter$MovieViewHolder {
+}
+class MovieAdapter$DiffUtilCallback {
++ Boolean areItemsTheSame(Movie,Movie)
++ Boolean areContentsTheSame(Movie,Movie)
+}
+class MovieAdapter {
+- OnItemClickListener? onItemClickListener
++ MovieViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(MovieViewHolder,Int)
++ void setOnItemClickListener(OnItemClickListener)
+}
+class PersonList {
+}
+class GetMoviesDaoUseCase {
++ List<MovieDB> getAllMoviesDao()
++ void insertMovieToDb(Int)
++ void insertCollection(CollectionDB)
++ void insertCollectionFavorites()
++ void insertCollectionToWatch()
++ void insertWatchedCollection()
++ CollectionDB getCollectionByNameDao(String)
++ List<CollectionDB> getAllCollectionDao()
++ void updateCollection(CollectionDB)
++ void addMovieToCollection(String,List<Int>)
+}
+class SearchActivity {
+- ActivitySearchBinding binding
++ void onCreate(Bundle?)
+}
+interface MoviePersonAdapter$OnItemClickListener {
++ void onItemClick(Int)
+}
+class MoviePersonAdapter$MovieViewHolder {
+}
+class MoviePersonAdapter$DiffUtilCallback {
++ Boolean areItemsTheSame(Movie,Movie)
++ Boolean areContentsTheSame(Movie,Movie)
+}
+class MoviePersonAdapter {
+- OnItemClickListener? onItemClickListener
++ MovieViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(MovieViewHolder,Int)
++ void setOnItemClickListener(OnItemClickListener)
+}
+class BottomSheetDialog$Companion {
++ void newInstance()
+}
+class BottomSheetDialog {
+- FragmentBottomSheetDialogBinding? _binding
+-  binding
++ HomeViewModelFactory homeViewModelFactory
+- HomeViewModel viewModel
++ ProfileViewModelFactory profileViewModelFactory
+- ProfileViewModel profileViewModel
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+- void showDialog(Bundle)
+}
+class ProfileFragment$Companion {
++ void newInstance()
+}
+class ProfileFragment {
+- FragmentProfileBinding? _binding
+-  binding
++ HomeViewModelFactory homeViewModelFactory
+- HomeViewModel homeViewModel
++ ProfileViewModelFactory profileViewModelFactory
+- ProfileViewModel profileViewModel
+-  movieAdapterFromDb
+-  collectionsAdapter
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+- void showDialog()
++ void onDestroy()
+}
+class PersonInfo {
+}
+class Film {
+}
+class Spouse {
+}
+class ProfileListPageFragment$Companion {
++ void newInstance()
+}
+class ProfileListPageFragment {
+- FragmentProfileListPageBinding? _binding
+-  binding
+-  movieListAdapter
++ ProfileViewModelFactory profileViewModelFactory
+- ProfileViewModel viewModel
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class ListPageFragment$Companion {
++ void newInstance()
+}
+class ListPageFragment {
+- FragmentListPageBinding? _binding
+-  binding
+-  movieListAdapter
+-  personListAdapter
+-  similarListAdapter
++ HomeViewModelFactory homeViewModelFactory
+- HomeViewModel viewModel
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class SearchFragment$Companion {
++ void newInstance()
+}
+class SearchFragment {
+- FragmentSearchBinding? _binding
+-  binding
+-  movieListAdapter
++ SearchViewModelFactory searchViewModelFactory
+- SearchViewModel viewModel
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class WelcomeFragment {
+- FragmentWelcomeBinding? _binding
+-  binding
+- MainViewModel viewModel
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class ProfileActivity {
+- ActivityProfileBinding binding
++ ProfileViewModelFactory profileViewModelFactory
+- ProfileViewModel profileViewModel
++ void onCreate(Bundle?)
+}
+class SelectGenreFragment$Companion {
++ void newInstance()
+}
+class SelectGenreFragment {
+- FragmentSelectGenreBinding? _binding
+-  binding
++ SearchViewModelFactory searchViewModelFactory
+- SearchViewModel viewModel
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+}
+class ErrorFragment$Companion {
++ void newInstance()
+}
+class ErrorFragment {
+- FragmentErrorBinding? _binding
+-  binding
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onDestroy()
++ void onViewCreated(View,Bundle?)
+}
+class SelectCountryFragment$Companion {
++ void newInstance()
+}
+class SelectCountryFragment {
+- FragmentSelectCountryBinding? _binding
+-  binding
++ SearchViewModelFactory searchViewModelFactory
+- SearchViewModel viewModel
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+}
+class PersonMoviesListPageFragment$Companion {
++ void newInstance()
+}
+class PersonMoviesListPageFragment {
+- FragmentPersonMoviesListPageBinding? _binding
+-  binding
+-  movieListAdapter
++ HomeViewModelFactory homeViewModelFactory
+- HomeViewModel viewModel
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class MoviePagingSource {
+}
+class ProfileViewModel {
+-  _movies
++ LiveData<List<Movie>> movies
+-  _moviesWithInfo
++  moviesWithInfo
+-  _collections
++  collections
++ void insertMovieToDb(Int,String)
++ void getMoviesFromCollection(String)
++ void getFavoritesMovies()
++ void createNewCollection(String)
++ Boolean checkNamesCollections(String)
++ void getAllCollections()
++ void insertCollections()
++ void refresh()
+}
+class YearPickerAdapter$YearViewHolder {
+}
+class YearPickerAdapter {
+- ((YearItem) -> Unit)? onYearClickListener
+- Int selectedPosition
++ void null()
++ void setSelectedPosition(Int)
++ void setOnYearClickListener((YearItem) -> Unit)
++ YearViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(YearViewHolder,Int)
++ Int getItemCount()
+}
+class MovieByGenrePagingSource {
+}
+interface ProfileMovieAdapter$OnItemClickListener {
++ void onItemClick(Int)
+}
+class ProfileMovieAdapter$MovieViewHolder {
+}
+class ProfileMovieAdapter$DiffUtilCallback {
++ Boolean areItemsTheSame(Movie,Movie)
++ Boolean areContentsTheSame(Movie,Movie)
+}
+class ProfileMovieAdapter {
+- OnItemClickListener? onItemClickListener
++ MovieViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(MovieViewHolder,Int)
++ void setOnItemClickListener(OnItemClickListener)
+}
+abstract class AppDatabase {
++ MovieDao movieDao()
++ CollectionDao collectionDao()
+}
+class ViewPagerAdapter {
+}
+class Pager2ViewHolder {
+}
+
+
+
+
+Fragment <|-- ImagesListPage
+LinearLayout <|-- FilmsView
+
+ListAdapter <|-- SimilarMovieAdapter
+ViewHolder <|-- SimilarMovieViewHolder
+ItemCallback <|-- DiffUtilCallback
+Application <|-- App
+
+ViewHolder <|-- FiltersViewHolder
+ItemCallback <|-- DiffUtilCallback
+CollectionsAdapter +.. CollectionsAdapter$OnItemClickListener
+CollectionsAdapter +.. CollectionsAdapter$MovieViewHolder
+ViewHolder <|-- CollectionsAdapter$MovieViewHolder
+CollectionsAdapter +.. CollectionsAdapter$DiffUtilCallback
+ItemCallback <|-- CollectionsAdapter$DiffUtilCallback
+ListAdapter <|-- CollectionsAdapter
+Fragment <|-- SearchYearPicker
+MovieListApi +.. MovieListApi$Companion
+ImagesAdapter +.. ImagesAdapter$OnItemClickListener
+ImagesAdapter +.. ImagesAdapter$ImagesViewHolder
+ViewHolder <|-- ImagesAdapter$ImagesViewHolder
+ImagesAdapter +.. ImagesAdapter$DiffUtilCallback
+ItemCallback <|-- ImagesAdapter$DiffUtilCallback
+ListAdapter <|-- ImagesAdapter
+ViewModel <|-- SearchViewModel
+Fragment <|-- PersonPageFragment
+AppCompatActivity <|-- WelcomeActivity
+AppCompatActivity <|-- HomeActivity
+
+Fragment <|-- SettingsSearchFragment
+
+DialogFragment <|-- CollectionNameDialog
+
+
+ViewHolder <|-- FiltersViewHolder
+ItemCallback <|-- DiffUtilCallback
+Fragment <|-- LoaderFragment
+
+
+ItemCallback <|-- DiffUtilCallback
+ViewModel <|-- HomeViewModel
+Fragment <|-- FragmentMoviePage
+Fragment <|-- HomeFragment
+PersonAdapter +.. PersonAdapter$OnItemClickListener
+PersonAdapter +.. PersonAdapter$PersonViewHolder
+ViewHolder <|-- PersonAdapter$PersonViewHolder
+PersonAdapter +.. PersonAdapter$DiffUtilCallback
+ItemCallback <|-- PersonAdapter$DiffUtilCallback
+ListAdapter <|-- PersonAdapter
+DialogFragment <|-- CollectionNameDialogProfile
+ViewModel <|-- MainViewModel
+MovieAdapter +.. MovieAdapter$OnItemClickListener
+MovieAdapter +.. MovieAdapter$MovieViewHolder
+ViewHolder <|-- MovieAdapter$MovieViewHolder
+MovieAdapter +.. MovieAdapter$DiffUtilCallback
+ItemCallback <|-- MovieAdapter$DiffUtilCallback
+PagingDataAdapter <|-- MovieAdapter
+AppCompatActivity <|-- SearchActivity
+MoviePersonAdapter +.. MoviePersonAdapter$OnItemClickListener
+MoviePersonAdapter +.. MoviePersonAdapter$MovieViewHolder
+ViewHolder <|-- MoviePersonAdapter$MovieViewHolder
+MoviePersonAdapter +.. MoviePersonAdapter$DiffUtilCallback
+ItemCallback <|-- MoviePersonAdapter$DiffUtilCallback
+ListAdapter <|-- MoviePersonAdapter
+
+ViewModel <|-- ProfileViewModel
+YearPickerAdapter +.. YearPickerAdapter$YearViewHolder
+
+Adapter <|-- YearPickerAdapter
+
+ProfileMovieAdapter +.. ProfileMovieAdapter$OnItemClickListener
+ProfileMovieAdapter +.. ProfileMovieAdapter$MovieViewHolder
+ViewHolder <|-- ProfileMovieAdapter$MovieViewHolder
+ProfileMovieAdapter +.. ProfileMovieAdapter$DiffUtilCallback
+ItemCallback <|-- ProfileMovieAdapter$DiffUtilCallback
+ListAdapter <|-- ProfileMovieAdapter
+RoomDatabase <|-- AppDatabase
+
+
+@enduml

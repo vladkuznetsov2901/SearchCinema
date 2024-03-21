@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_search"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.skillcinema.presentation.searchScreens.ui.main.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_fragmentMoviePage"
+            app:destination="@id/fragmentMoviePage" />
+        <action
+            android:id="@+id/action_searchFragment_to_settingsSearchFragment"
+            app:destination="@id/settingsSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMoviePage"
+        android:name="com.example.skillcinema.presentation.homeScreens.ui.FragmentMoviePage"
+        android:label="FragmentMoviePage" >
+        <action
+            android:id="@+id/action_fragmentMoviePage_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsSearchFragment"
+        android:name="com.example.skillcinema.presentation.searchScreens.ui.main.SettingsSearchFragment"
+        android:label="fragment_settings_search"
+        tools:layout="@layout/fragment_settings_search" >
+        <action
+            android:id="@+id/action_settingsSearchFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+        <action
+            android:id="@+id/action_settingsSearchFragment_to_searchYearPicker"
+            app:destination="@id/searchYearPicker" />
+        <action
+            android:id="@+id/action_settingsSearchFragment_to_selectGenreFragment"
+            app:destination="@id/selectGenreFragment" />
+        <action
+            android:id="@+id/action_settingsSearchFragment_to_selectCountryFragment"
+            app:destination="@id/selectCountryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchYearPicker"
+        android:name="com.example.skillcinema.presentation.searchScreens.ui.main.SearchYearPicker"
+        android:label="fragment_search_year_picker"
+        tools:layout="@layout/fragment_search_year_picker" >
+        <action
+            android:id="@+id/action_searchYearPicker_to_settingsSearchFragment"
+            app:destination="@id/settingsSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectGenreFragment"
+        android:name="com.example.skillcinema.presentation.searchScreens.ui.main.SelectGenreFragment"
+        android:label="fragment_select_genre"
+        tools:layout="@layout/fragment_select_genre" >
+        <action
+            android:id="@+id/action_selectGenreFragment_to_settingsSearchFragment"
+            app:destination="@id/settingsSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectCountryFragment"
+        android:name="com.example.skillcinema.presentation.searchScreens.ui.main.SelectCountryFragment"
+        android:label="fragment_select_country"
+        tools:layout="@layout/fragment_select_country" >
+        <action
+            android:id="@+id/action_selectCountryFragment_to_settingsSearchFragment"
+            app:destination="@id/settingsSearchFragment" />
+    </fragment>
+</navigation>

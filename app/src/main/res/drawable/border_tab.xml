@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="20dp" /> <!-- Задайте радиус закругления углов -->
+    <stroke android:width="2dp" android:color="@color/tab_border_color" /> <!-- Цвет обводки -->
+    <solid android:color="@android:color/white" /> <!-- Цвет заливки фона таба -->
+</shape>

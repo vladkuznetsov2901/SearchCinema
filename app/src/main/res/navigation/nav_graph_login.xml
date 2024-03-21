@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_login"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.skillcinema.presentation.loginScreens.ui.main.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_loginFormFragment"
+            app:destination="@id/loginFormFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFormFragment"
+            app:destination="@id/registerFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFormFragment"
+        android:name="com.example.skillcinema.presentation.loginScreens.ui.main.LoginFormFragment"
+        android:label="fragment_login_form"
+        tools:layout="@layout/fragment_login_form" >
+        <action
+            android:id="@+id/action_loginFormFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFormFragment"
+        android:name="com.example.skillcinema.presentation.loginScreens.ui.main.RegisterFormFragment"
+        android:label="fragment_register_form"
+        tools:layout="@layout/fragment_register_form" >
+        <action
+            android:id="@+id/action_registerFormFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,460 @@
+@startuml
+class com.example.skillcinema.data.GenresAndCountries {
+}
+class com.example.skillcinema.data.CountryFilter {
+}
+class com.example.skillcinema.data.GenreFilter {
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SearchViewModelFactory {
+}
+interface com.example.skillcinema.data.entity.CollectionDao {
++ void insertCollection(CollectionDB)
++ List<CollectionDB> getAllCollections()
++ CollectionDB getCollectionById(Long)
+}
+class com.example.skillcinema.domain.GetMovieListUseCase {
++ List<Movie> getPremiers(Int,String)
++ List<Movie> getPopular(String)
++ List<Movie> getMoviesByGenre(Array<Int>,Array<Int>)
++ List<Movie> getSerials(String)
++ Movie getMovieInfo(Int)
++ List<Person> getPersons(Int)
++ List<Image> getMovieImages(Int,String)
++ List<SimilarMovie> getSimilarMovies(Int)
++ PersonInfo getPersonInfo(Int)
++ List<Movie> getMoviesByParameters(void,Array<Int>,void,Array<Int>,void,String,void,String,void,Int,void,Int,void,Int,void,Int,void)
++ List<Movie> getMoviesByKeyword(String)
++ List<CountryFilter> getCountries()
++ List<GenreFilter> getGenres()
+}
+class com.example.skillcinema.presentation.homeScreens.ui.ImagesListPage {
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class com.example.skillcinema.data.entity.MovieDB {
+}
+class com.example.skillcinema.presentation.homeScreens.ui.FilmsView {
++ RecyclerView getRecycler()
++ AppCompatButton getButton()
++ AppCompatButton getShowAllButton()
+}
+
+class com.example.skillcinema.Country {
+}
+class com.example.skillcinema.Genre {
+}
+class com.example.skillcinema.presentation.homeScreens.ui.HomeViewModelFactory {
+}
+class com.example.skillcinema.adapters.SimilarMovieAdapter {
+}
+interface com.example.skillcinema.adapters.OnItemClickListener {
++ void onItemClick(Int)
+}
+class com.example.skillcinema.adapters.SimilarMovieViewHolder {
+}
+class com.example.skillcinema.adapters.DiffUtilCallback {
++ Boolean areItemsTheSame(SimilarMovie,SimilarMovie)
++ Boolean areContentsTheSame(SimilarMovie,SimilarMovie)
+}
+class com.example.skillcinema.App {
++ void onCreate()
+}
+class com.example.skillcinema.adapters.GenresAdapter {
+}
+interface com.example.skillcinema.adapters.OnItemClickListener {
++ void onItemClick(String)
+}
+class com.example.skillcinema.adapters.FiltersViewHolder {
+}
+class com.example.skillcinema.adapters.DiffUtilCallback {
++ Boolean areItemsTheSame(GenreFilter,GenreFilter)
++ Boolean areContentsTheSame(GenreFilter,GenreFilter)
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SearchYearPicker$Companion {
++ void newInstance()
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SearchYearPicker {
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+- List<Int> generateYears()
+}
+class com.example.skillcinema.api.MovieListApi$Companion {
+}
+interface com.example.skillcinema.api.MovieListApi {
++ void getMoviesPremiers(void)
++ void getMoviesTop(void)
++ void getMoviesByGenre(void)
++ void getSerials(void)
++ void getMovieInfo(void)
++ void getPersons(void)
++ void getMovieGallery(void)
++ void getSimilarMovies(void)
++ void getPersonInfo(void)
++ void getMoviesByParameters(void)
++ void getMoviesByKeyword(void)
++ GenresAndCountries getFilters(void)
+}
+class com.example.skillcinema.api.null {
+}
+interface com.example.skillcinema.data.entity.MovieDao {
++ void insertMovie(MovieDB)
++ List<MovieDB> getAllMovies()
+}
+interface com.example.skillcinema.adapters.ImagesAdapter$OnItemClickListener {
++ void onItemClick(Int)
+}
+class com.example.skillcinema.adapters.ImagesAdapter$ImagesViewHolder {
+}
+class com.example.skillcinema.adapters.ImagesAdapter$DiffUtilCallback {
++ Boolean areItemsTheSame(Image,Image)
++ Boolean areContentsTheSame(Image,Image)
+}
+class com.example.skillcinema.adapters.ImagesAdapter {
++ ImagesViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(ImagesViewHolder,Int)
++ void setOnItemClickListener(OnItemClickListener)
+}
+class com.example.skillcinema.data.MovieListRepository {
++ List<Movie> getPremiers(Int,String)
++ List<Movie> getPopular(String)
++ List<Movie> getMoviesByGenre(Array<Int>,Array<Int>)
++ List<Movie> getSerials(String)
++ Movie getMovieInfo(Int)
++ List<Person> getPersons(Int)
++ List<Image> getMovieImages(Int,String)
++ List<SimilarMovie> getSimilarMovies(Int)
++ PersonInfo getPersonInfo(Int)
++ List<Movie> getMoviesByParameters(void,Array<Int>,void,Array<Int>,void,String,void,String,void,Int,void,Int,void,Int,void,Int,void)
++ List<Movie> getMoviesByKeyword(String)
++ List<CountryFilter> getCountries()
++ List<GenreFilter> getGenres()
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SearchViewModel {
++ List<Movie> getMoviesByParameters(Array<Int>,Array<Int>,String,String,Int,Int,Int,Int)
++ void getMoviesByKeyword(String)
++ List<CountryFilter> loadCountries()
++ List<GenreFilter> loadGenres()
+}
+class com.example.skillcinema.presentation.homeScreens.ui.PersonPageFragment {
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+}
+class com.example.skillcinema.presentation.welcomeScreens.WelcomeActivity {
++ void onCreate(Bundle?)
++ void onPause()
+- void addToList(String,Int)
+- void postToList()
+}
+class com.example.skillcinema.data.MovieTop {
+}
+class com.example.skillcinema.data.CountryTop {
+}
+class com.example.skillcinema.data.GenreTop {
+}
+class com.example.skillcinema.data.ImagesTop {
+}
+class com.example.skillcinema.data.ImageTop {
+}
+class com.example.skillcinema.data.SimilarMoviesTop {
+}
+class com.example.skillcinema.data.SimilarMovieTop {
+}
+class com.example.skillcinema.presentation.homeScreens.HomeActivity {
++ void onCreate(Bundle?)
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SettingsSearchFragment$Companion {
++ void newInstance(String,String)
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SettingsSearchFragment {
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+}
+class com.example.skillcinema.data.MovieList {
+}
+class com.example.skillcinema.adapters.CountriesAdapter {
+}
+interface com.example.skillcinema.adapters.OnItemClickListener {
++ void onItemClick(String)
+}
+class com.example.skillcinema.adapters.FiltersViewHolder {
+}
+class com.example.skillcinema.adapters.DiffUtilCallback {
++ Boolean areItemsTheSame(CountryFilter,CountryFilter)
++ Boolean areContentsTheSame(CountryFilter,CountryFilter)
+}
+class com.example.skillcinema.data.entity.CollectionDB {
+}
+class com.example.skillcinema.presentation.welcomeScreens.ui.main.LoaderFragment$Companion {
++ void newInstance()
+}
+class com.example.skillcinema.presentation.welcomeScreens.ui.main.LoaderFragment {
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+}
+class com.example.skillcinema.presentation.homeScreens.ui.HomeViewModel {
+- void loadPremiers()
+- void loadPopular()
+- void loadActionUSA()
+- void loadTop250()
+- void loadFranceDrams()
+- void loadSerials()
++ Movie loadMovieInfo(Int)
++ void loadPersons(Int)
++ List<Image> loadMovieImg(Int,String)
++ void loadSimilarMovies(Int)
++ PersonInfo loadPersonInfo(Int)
+}
+class com.example.skillcinema.presentation.homeScreens.ui.FragmentMoviePage$Companion {
++ void newInstance()
+}
+class com.example.skillcinema.presentation.homeScreens.ui.FragmentMoviePage {
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+- String formatMinutesToHoursAndMinutes(Int)
+- void onClickButton(Button,String,String,Int)
+}
+class com.example.skillcinema.presentation.homeScreens.ui.HomeFragment$Companion {
++ void newInstance()
+}
+class com.example.skillcinema.presentation.homeScreens.ui.HomeFragment {
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+- void onClickButton(Button,TextView,String)
++ void showButton()
+}
+class com.example.skillcinema.data.Movie {
+}
+class com.example.skillcinema.data.Country {
+}
+class com.example.skillcinema.data.Genre {
+}
+class com.example.skillcinema.data.Images {
+}
+class com.example.skillcinema.data.Image {
+}
+class com.example.skillcinema.data.SimilarMovies {
+}
+class com.example.skillcinema.data.SimilarMovie {
+}
+interface com.example.skillcinema.adapters.PersonAdapter$OnItemClickListener {
++ void onItemClick(Int)
+}
+class com.example.skillcinema.adapters.PersonAdapter$PersonViewHolder {
+}
+class com.example.skillcinema.adapters.PersonAdapter$DiffUtilCallback {
++ Boolean areItemsTheSame(Person,Person)
++ Boolean areContentsTheSame(Person,Person)
+}
+class com.example.skillcinema.adapters.PersonAdapter {
++ PersonViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(PersonViewHolder,Int)
++ void setOnItemClickListener(OnItemClickListener)
+}
+class com.example.skillcinema.presentation.welcomeScreens.ui.main.MainViewModel {
+}
+class com.example.skillcinema.data.Person {
+}
+interface com.example.skillcinema.adapters.MovieAdapter$OnItemClickListener {
++ void onItemClick(Int)
+}
+class com.example.skillcinema.adapters.MovieAdapter$MovieViewHolder {
+}
+class com.example.skillcinema.adapters.MovieAdapter$DiffUtilCallback {
++ Boolean areItemsTheSame(Movie,Movie)
++ Boolean areContentsTheSame(Movie,Movie)
+}
+class com.example.skillcinema.adapters.MovieAdapter {
++ MovieViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(MovieViewHolder,Int)
++ void setOnItemClickListener(OnItemClickListener)
+}
+class com.example.skillcinema.data.PersonList {
+}
+class com.example.skillcinema.domain.GetMoviesDaoUseCase {
++ List<MovieDB> getAllMoviesDao()
++ void insertMoviesDao(MovieDB)
++ void getCollectionByIdDao(Long)
++ List<CollectionDB> getAllCollectionDao()
++ void insertCollectionDao(CollectionDB)
+}
+class com.example.skillcinema.presentation.searchScreens.SearchActivity {
++ void onCreate(Bundle?)
+}
+interface com.example.skillcinema.adapters.MoviePersonAdapter$OnItemClickListener {
++ void onItemClick(Int)
+}
+class com.example.skillcinema.adapters.MoviePersonAdapter$MovieViewHolder {
+}
+class com.example.skillcinema.adapters.MoviePersonAdapter$DiffUtilCallback {
++ Boolean areItemsTheSame(Movie,Movie)
++ Boolean areContentsTheSame(Movie,Movie)
+}
+class com.example.skillcinema.adapters.MoviePersonAdapter {
++ MovieViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(MovieViewHolder,Int)
++ void setOnItemClickListener(OnItemClickListener)
+}
+class com.example.skillcinema.presentation.profileScreens.ui.main.ProfileFragment$Companion {
++ void newInstance()
+}
+class com.example.skillcinema.presentation.profileScreens.ui.main.ProfileFragment {
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class com.example.skillcinema.data.PersonInfo {
+}
+class com.example.skillcinema.data.Film {
+}
+class com.example.skillcinema.data.Spouse {
+}
+class com.example.skillcinema.presentation.homeScreens.ui.ListPageFragment$Companion {
++ void newInstance()
+}
+class com.example.skillcinema.presentation.homeScreens.ui.ListPageFragment {
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SearchFragment$Companion {
++ void newInstance()
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SearchFragment {
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class com.example.skillcinema.presentation.welcomeScreens.ui.main.WelcomeFragment {
++ void onCreate(Bundle?)
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class com.example.skillcinema.presentation.profileScreens.ProfileActivity {
++ void onCreate(Bundle?)
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SelectGenreFragment$Companion {
++ void newInstance()
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SelectGenreFragment {
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SelectCountryFragment$Companion {
++ void newInstance()
+}
+class com.example.skillcinema.presentation.searchScreens.ui.main.SelectCountryFragment {
++ void onCreate(Bundle?)
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+}
+class com.example.skillcinema.presentation.homeScreens.ui.PersonMoviesListPageFragment$Companion {
++ void newInstance()
+}
+class com.example.skillcinema.presentation.homeScreens.ui.PersonMoviesListPageFragment {
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroy()
+}
+class com.example.skillcinema.presentation.profileScreens.ui.main.ProfileViewModel {
++ void insertMovieToDb(MovieDB)
+}
+class com.example.skillcinema.adapters.YearPickerAdapter {
+}
+class com.example.skillcinema.adapters.ViewHolder {
++ void bind(Int)
+}
+abstract class com.example.skillcinema.data.entity.AppDatabase {
++ MovieDao movieDao()
++ CollectionDao collectionDao()
+}
+class com.example.skillcinema.presentation.welcomeScreens.adapters.ViewPagerAdapter {
+}
+class com.example.skillcinema.presentation.welcomeScreens.adapters.Pager2ViewHolder {
+}
+
+
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.homeScreens.ui.ImagesListPage
+android.widget.LinearLayout <|-- com.example.skillcinema.presentation.homeScreens.ui.FilmsView
+androidx.recyclerview.widget.ListAdapter <|-- com.example.skillcinema.adapters.SimilarMovieAdapter
+com.example.skillcinema.adapters.ViewHolder <|-- com.example.skillcinema.adapters.SimilarMovieViewHolder
+com.example.skillcinema.adapters.ItemCallback <|-- com.example.skillcinema.adapters.DiffUtilCallback
+android.app.Application <|-- com.example.skillcinema.App
+com.example.skillcinema.adapters.ViewHolder <|-- com.example.skillcinema.adapters.FiltersViewHolder
+com.example.skillcinema.adapters.ItemCallback <|-- com.example.skillcinema.adapters.DiffUtilCallback
+com.example.skillcinema.presentation.searchScreens.ui.main.SearchYearPicker +.. com.example.skillcinema.presentation.searchScreens.ui.main.SearchYearPicker$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.searchScreens.ui.main.SearchYearPicker
+com.example.skillcinema.api.MovieListApi +.. com.example.skillcinema.api.MovieListApi$Companion
+com.example.skillcinema.adapters.ImagesAdapter +.. com.example.skillcinema.adapters.ImagesAdapter$OnItemClickListener
+com.example.skillcinema.adapters.ImagesAdapter +.. com.example.skillcinema.adapters.ImagesAdapter$ImagesViewHolder
+com.example.skillcinema.adapters.ViewHolder <|-- com.example.skillcinema.adapters.ImagesAdapter$ImagesViewHolder
+com.example.skillcinema.adapters.ImagesAdapter +.. com.example.skillcinema.adapters.ImagesAdapter$DiffUtilCallback
+com.example.skillcinema.adapters.ItemCallback <|-- com.example.skillcinema.adapters.ImagesAdapter$DiffUtilCallback
+androidx.recyclerview.widget.ListAdapter <|-- com.example.skillcinema.adapters.ImagesAdapter
+androidx.lifecycle.ViewModel <|-- com.example.skillcinema.presentation.searchScreens.ui.main.SearchViewModel
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.homeScreens.ui.PersonPageFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.skillcinema.presentation.welcomeScreens.WelcomeActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.skillcinema.presentation.homeScreens.HomeActivity
+com.example.skillcinema.presentation.searchScreens.ui.main.SettingsSearchFragment +.. com.example.skillcinema.presentation.searchScreens.ui.main.SettingsSearchFragment$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.searchScreens.ui.main.SettingsSearchFragment
+com.example.skillcinema.adapters.ViewHolder <|-- com.example.skillcinema.adapters.FiltersViewHolder
+com.example.skillcinema.adapters.ItemCallback <|-- com.example.skillcinema.adapters.DiffUtilCallback
+com.example.skillcinema.presentation.welcomeScreens.ui.main.LoaderFragment +.. com.example.skillcinema.presentation.welcomeScreens.ui.main.LoaderFragment$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.welcomeScreens.ui.main.LoaderFragment
+androidx.lifecycle.ViewModel <|-- com.example.skillcinema.presentation.homeScreens.ui.HomeViewModel
+com.example.skillcinema.presentation.homeScreens.ui.FragmentMoviePage +.. com.example.skillcinema.presentation.homeScreens.ui.FragmentMoviePage$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.homeScreens.ui.FragmentMoviePage
+com.example.skillcinema.presentation.homeScreens.ui.HomeFragment +.. com.example.skillcinema.presentation.homeScreens.ui.HomeFragment$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.homeScreens.ui.HomeFragment
+com.example.skillcinema.adapters.PersonAdapter +.. com.example.skillcinema.adapters.PersonAdapter$OnItemClickListener
+com.example.skillcinema.adapters.PersonAdapter +.. com.example.skillcinema.adapters.PersonAdapter$PersonViewHolder
+com.example.skillcinema.adapters.ViewHolder <|-- com.example.skillcinema.adapters.PersonAdapter$PersonViewHolder
+com.example.skillcinema.adapters.PersonAdapter +.. com.example.skillcinema.adapters.PersonAdapter$DiffUtilCallback
+com.example.skillcinema.adapters.ItemCallback <|-- com.example.skillcinema.adapters.PersonAdapter$DiffUtilCallback
+androidx.recyclerview.widget.ListAdapter <|-- com.example.skillcinema.adapters.PersonAdapter
+androidx.lifecycle.ViewModel <|-- com.example.skillcinema.presentation.welcomeScreens.ui.main.MainViewModel
+com.example.skillcinema.adapters.MovieAdapter +.. com.example.skillcinema.adapters.MovieAdapter$OnItemClickListener
+com.example.skillcinema.adapters.MovieAdapter +.. com.example.skillcinema.adapters.MovieAdapter$MovieViewHolder
+com.example.skillcinema.adapters.ViewHolder <|-- com.example.skillcinema.adapters.MovieAdapter$MovieViewHolder
+com.example.skillcinema.adapters.MovieAdapter +.. com.example.skillcinema.adapters.MovieAdapter$DiffUtilCallback
+com.example.skillcinema.adapters.ItemCallback <|-- com.example.skillcinema.adapters.MovieAdapter$DiffUtilCallback
+androidx.recyclerview.widget.ListAdapter <|-- com.example.skillcinema.adapters.MovieAdapter
+androidx.appcompat.app.AppCompatActivity <|-- com.example.skillcinema.presentation.searchScreens.SearchActivity
+com.example.skillcinema.adapters.MoviePersonAdapter +.. com.example.skillcinema.adapters.MoviePersonAdapter$OnItemClickListener
+com.example.skillcinema.adapters.MoviePersonAdapter +.. com.example.skillcinema.adapters.MoviePersonAdapter$MovieViewHolder
+com.example.skillcinema.adapters.ViewHolder <|-- com.example.skillcinema.adapters.MoviePersonAdapter$MovieViewHolder
+com.example.skillcinema.adapters.MoviePersonAdapter +.. com.example.skillcinema.adapters.MoviePersonAdapter$DiffUtilCallback
+com.example.skillcinema.adapters.ItemCallback <|-- com.example.skillcinema.adapters.MoviePersonAdapter$DiffUtilCallback
+androidx.recyclerview.widget.ListAdapter <|-- com.example.skillcinema.adapters.MoviePersonAdapter
+com.example.skillcinema.presentation.profileScreens.ui.main.ProfileFragment +.. com.example.skillcinema.presentation.profileScreens.ui.main.ProfileFragment$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.profileScreens.ui.main.ProfileFragment
+com.example.skillcinema.presentation.homeScreens.ui.ListPageFragment +.. com.example.skillcinema.presentation.homeScreens.ui.ListPageFragment$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.homeScreens.ui.ListPageFragment
+com.example.skillcinema.presentation.searchScreens.ui.main.SearchFragment +.. com.example.skillcinema.presentation.searchScreens.ui.main.SearchFragment$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.searchScreens.ui.main.SearchFragment
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.welcomeScreens.ui.main.WelcomeFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.skillcinema.presentation.profileScreens.ProfileActivity
+com.example.skillcinema.presentation.searchScreens.ui.main.SelectGenreFragment +.. com.example.skillcinema.presentation.searchScreens.ui.main.SelectGenreFragment$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.searchScreens.ui.main.SelectGenreFragment
+com.example.skillcinema.presentation.searchScreens.ui.main.SelectCountryFragment +.. com.example.skillcinema.presentation.searchScreens.ui.main.SelectCountryFragment$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.searchScreens.ui.main.SelectCountryFragment
+com.example.skillcinema.presentation.homeScreens.ui.PersonMoviesListPageFragment +.. com.example.skillcinema.presentation.homeScreens.ui.PersonMoviesListPageFragment$Companion
+androidx.fragment.app.Fragment <|-- com.example.skillcinema.presentation.homeScreens.ui.PersonMoviesListPageFragment
+androidx.lifecycle.ViewModel <|-- com.example.skillcinema.presentation.profileScreens.ui.main.ProfileViewModel
+com.example.skillcinema.adapters.ViewHolder <|-- com.example.skillcinema.adapters.ViewHolder
+androidx.room.RoomDatabase <|-- com.example.skillcinema.data.entity.AppDatabase
+@enduml

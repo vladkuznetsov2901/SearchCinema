@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.searchScreens.ui.main.SettingsSearchFragment">
+
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/btn_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/search_settings_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/search_settings_text"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/back_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/show_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/show"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_settings_textView" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="16dp"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_textView"
+        app:selectionRequired="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_all"
+            android:layout_width="77dp"
+            android:layout_height="40dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/all"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipStartPadding="0dp"
+            app:chipStrokeColor="#000000"
+            app:chipStrokeWidth="0.8dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_films"
+            android:layout_width="131dp"
+            android:layout_height="40dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/films"
+
+            android:textAlignment="center"
+            android:textColor="#000000"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipEndPadding="0dp"
+            app:chipStartPadding="0dp"
+            app:chipStrokeColor="#000000"
+            app:chipStrokeWidth="0.8dp"
+            app:closeIconEndPadding="0dp"
+            app:closeIconStartPadding="0dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_serials"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/serials"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipEndPadding="0dp"
+            app:chipStartPadding="0dp"
+            app:chipStrokeColor="#000000"
+            app:chipStrokeWidth="0.8dp"
+            app:closeIconEndPadding="0dp"
+            app:closeIconStartPadding="0dp" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/country_btn"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+    <TextView
+        android:id="@+id/country_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/country"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/country_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/country_btn"
+        app:layout_constraintTop_toTopOf="@+id/country_btn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/countryChange_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
+        android:text="@string/russia"
+        android:textColor="#838390"
+        app:layout_constraintBottom_toBottomOf="@+id/country_btn"
+        app:layout_constraintEnd_toEndOf="@+id/country_btn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/country_btn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/genre_btn"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="26dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/country_btn" />
+
+    <TextView
+        android:id="@+id/genre_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/genre"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/genre_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/genre_btn"
+        app:layout_constraintTop_toTopOf="@+id/genre_btn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/genreChange_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
+        android:text="@string/comedy"
+        android:textColor="#838390"
+        app:layout_constraintBottom_toBottomOf="@+id/genre_btn"
+        app:layout_constraintEnd_toEndOf="@+id/genre_btn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/genre_textView"
+        app:layout_constraintTop_toTopOf="@+id/genre_btn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/year_btn"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="48dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/country_btn" />
+
+    <TextView
+        android:id="@+id/year_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/year"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/year_btn"
+        app:layout_constraintStart_toStartOf="@+id/year_btn"
+        app:layout_constraintTop_toTopOf="@+id/year_btn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/yearChange_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
+        android:text="@string/_1998_2017"
+        android:textColor="#838390"
+        app:layout_constraintBottom_toBottomOf="@+id/year_btn"
+        app:layout_constraintEnd_toEndOf="@+id/year_btn"
+        app:layout_constraintTop_toTopOf="@+id/year_btn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/rating_btn"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="26dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/year_btn" />
+
+    <TextView
+        android:id="@+id/rating_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/rating"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/rating_btn"
+        app:layout_constraintStart_toStartOf="@+id/rating_btn"
+        app:layout_constraintTop_toTopOf="@+id/rating_btn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/ratingChange_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
+        android:text="@string/any"
+        android:textColor="#838390"
+        app:layout_constraintBottom_toBottomOf="@+id/rating_btn"
+        app:layout_constraintEnd_toEndOf="@+id/rating_btn"
+        app:layout_constraintTop_toTopOf="@+id/rating_btn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/rangeSlider"
+        android:layout_width="308dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:valueFrom="0"
+        android:valueTo="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rating_btn"
+        app:values="@array/initial_slider_values">
+
+    </com.google.android.material.slider.RangeSlider>
+
+    <TextView
+        android:id="@+id/selectedMinValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:text="@string/one"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rangeSlider" />
+
+    <TextView
+        android:id="@+id/selectedMaxValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="62dp"
+        android:text="@string/ten"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rangeSlider" />
+
+    <TextView
+        android:id="@+id/sort_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/sort"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rangeSlider" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="61dp"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rangeSlider"
+        app:selectionRequired="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_date"
+            android:layout_width="77dp"
+            android:layout_height="40dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/date"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipStartPadding="0dp"
+            app:chipStrokeColor="#000000"
+            app:chipStrokeWidth="0.8dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_popular"
+            android:layout_width="131dp"
+            android:layout_height="40dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/popular"
+
+            android:textAlignment="center"
+            android:textColor="#000000"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipEndPadding="0dp"
+            app:chipStartPadding="0dp"
+            app:chipStrokeColor="#000000"
+            app:chipStrokeWidth="0.8dp"
+            app:closeIconEndPadding="0dp"
+            app:closeIconStartPadding="0dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_rating"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/rating"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipEndPadding="0dp"
+            app:chipStartPadding="0dp"
+            app:chipStrokeColor="#000000"
+            app:chipStrokeWidth="0.8dp"
+            app:closeIconEndPadding="0dp"
+            app:closeIconStartPadding="0dp" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/dont_watched_chip"
+        android:layout_width="308dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="48dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/dont_watched"
+        app:chipBackgroundColor="@color/bg_chip_state_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroupSort"
+        app:textStartPadding="40dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_dontwatched"
+        app:layout_constraintStart_toStartOf="@+id/dont_watched_chip"
+        app:layout_constraintTop_toTopOf="@+id/dont_watched_chip" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

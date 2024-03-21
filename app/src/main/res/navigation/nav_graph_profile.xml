@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_profile"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.skillcinema.presentation.profileScreens.ui.main.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_profileListPageFragment"
+            app:destination="@id/profileListPageFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_fragmentMoviePage2"
+            app:destination="@id/fragmentMoviePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileListPageFragment"
+        android:name="com.example.skillcinema.presentation.profileScreens.ui.main.ProfileListPageFragment"
+        android:label="ProfileListPageFragment" >
+        <action
+            android:id="@+id/action_profileListPageFragment_to_fragmentMoviePage"
+            app:destination="@id/fragmentMoviePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMoviePage"
+        android:name="com.example.skillcinema.presentation.homeScreens.ui.FragmentMoviePage"
+        android:label="FragmentMoviePage" >
+        <action
+            android:id="@+id/action_fragmentMoviePage2_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_fragmentMoviePage_to_profileListPageFragment"
+            app:destination="@id/profileListPageFragment" />
+    </fragment>
+</navigation>

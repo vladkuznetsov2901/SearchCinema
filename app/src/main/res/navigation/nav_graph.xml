@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment"
+    app:popUpToInclusive="true">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.skillcinema.presentation.welcomeScreens.ui.main.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_loaderFragment"
+            app:destination="@id/loaderFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@+id/loaderFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/loaderFragment"
+        android:name="com.example.skillcinema.presentation.welcomeScreens.ui.main.LoaderFragment"
+        android:label="fragment_loader"
+        tools:layout="@layout/fragment_loader" />
+
+</navigation>
